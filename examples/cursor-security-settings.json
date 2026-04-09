@@ -1,0 +1,43 @@
+{
+  "cursor.ai.security": {
+    "sandboxMode": "strict",
+    "allowedCommands": [
+      "git status",
+      "git diff",
+      "git log --oneline -20",
+      "npm test",
+      "npm run lint",
+      "npm run build",
+      "npx tsc --noEmit",
+      "python -m pytest"
+    ],
+    "blockedPatterns": [
+      "rm -rf",
+      "curl.*|.*bash",
+      "wget.*|.*sh",
+      "eval\\(",
+      "exec\\(",
+      "os\\.system\\(",
+      "subprocess\\.call\\(",
+      "child_process\\.exec\\("
+    ],
+    "fileAccessScope": [
+      "./src/**",
+      "./tests/**",
+      "./package.json",
+      "./tsconfig.json",
+      "./.eslintrc*"
+    ],
+    "blockedFilePatterns": [
+      ".env",
+      ".env.*",
+      "*.key",
+      "*.pem",
+      "credentials.*",
+      "secrets/**"
+    ],
+    "networkAccess": "none",
+    "maxFileSize": "1MB",
+    "maxOutputLength": 50000
+  }
+}

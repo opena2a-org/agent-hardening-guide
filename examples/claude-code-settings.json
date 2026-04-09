@@ -1,0 +1,55 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opena2a-org/agent-hardening-guide/main/schemas/agent-security-config.json",
+  "agentType": "claude-code",
+  "version": "1.0.0",
+  "security": {
+    "permissions": {
+      "allow": [
+        "Read(**)",
+        "Edit(**)",
+        "Bash(git status)",
+        "Bash(git diff *)",
+        "Bash(git log *)",
+        "Bash(git add *)",
+        "Bash(git commit *)",
+        "Bash(npm test)",
+        "Bash(npm run build)",
+        "Bash(npm run lint)",
+        "Bash(npx tsc --noEmit)"
+      ],
+      "deny": [
+        "Bash(curl *)",
+        "Bash(wget *)",
+        "Bash(rm -rf *)",
+        "Bash(chmod 777 *)",
+        "Bash(* > /etc/*)",
+        "Bash(* | bash)",
+        "Bash(eval *)",
+        "Bash(nc *)",
+        "Bash(ncat *)"
+      ]
+    },
+    "mcpServers": {
+      "filesystem": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"],
+        "env": {},
+        "securityNotes": "Restricted to /workspace directory. No write access to parent directories."
+      }
+    },
+    "environmentVariables": {
+      "passthrough": [
+        "NODE_ENV",
+        "CI"
+      ],
+      "blocked": [
+        "OPENAI_API_KEY",
+        "ANTHROPIC_API_KEY",
+        "AWS_SECRET_ACCESS_KEY",
+        "DATABASE_URL",
+        "GITHUB_TOKEN"
+      ],
+      "notes": "Blocked variables are available to tools at runtime but never exposed in prompt context. See https://agentpwn.com/tools/ai-agent-env-file-security for details."
+    }
+  }
+}
