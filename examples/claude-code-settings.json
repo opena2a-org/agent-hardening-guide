@@ -1,5 +1,4 @@
 {
-  "$schema": "https://raw.githubusercontent.com/opena2a-org/agent-hardening-guide/main/schemas/agent-security-config.json",
   "agentType": "claude-code",
   "version": "1.0.0",
   "security": {
