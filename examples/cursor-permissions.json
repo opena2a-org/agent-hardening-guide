@@ -1,0 +1,12 @@
+{
+  "terminalAllowlist": [
+    "git status",
+    "git diff",
+    "git log --oneline -20",
+    "npm test",
+    "npm run lint",
+    "npm run build",
+    "npx tsc --noEmit",
+    "python -m pytest"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "workspace_readwrite",
+  "readBoundary": "workspace",
+  "networkPolicy": {
+    "default": "deny",
+    "allow": [
+      "registry.npmjs.org",
+      "pypi.org",
+      "files.pythonhosted.org"
+    ],
+    "deny": []
+  }
+}
