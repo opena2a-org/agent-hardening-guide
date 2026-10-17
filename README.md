@@ -2,7 +2,7 @@
 
 Production hardening guide for AI agents. Covers prompt injection defense, tool sandboxing, credential management, and runtime monitoring.
 
-This guide is framework-agnostic but includes specific configuration examples for Claude Code, Cursor, LangChain, and A2A-compatible agents.
+This guide is framework-agnostic but includes specific configuration examples for Claude Code, Cursor, and LangChain.
 
 Contents:
 
