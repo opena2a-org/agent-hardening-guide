@@ -338,4 +338,4 @@ Learn more about AI agent security at [agentpwn.com/learn](https://agentpwn.com/
 
 ## License
 
-MIT
+[Apache-2.0](LICENSE)
